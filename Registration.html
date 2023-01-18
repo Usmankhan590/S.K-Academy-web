@@ -1,0 +1,499 @@
+<!-- <?php
+session_start();
+
+
+
+if(isset($_SESSION["userName"]))
+{
+	header('Location: index.php');
+}
+
+
+
+
+// if(isset($_POST["btnSubmit"]))
+// {
+// 	$var_FirstName = $_POST["txtFN"];
+// 	$var_LastName = $_POST["txtLastName"];
+// 	$var_Email = $_POST["txtEmail"];
+// 	$var_Pass1 = $_POST["txtPass1"];
+// 	$var_Pass2 = $_POST["txtPass2"];
+	
+// 	if($var_Pass1 != $var_Pass2)
+// 	{
+// 		$ErrorMessage = "Password Not Match";
+// 	}
+// 	else
+// 	{
+// 		$sqlQueryCheckUser = "select * from data_entry where email = '$var_Email'";
+// 		$result = mysqli_query($conn,$sqlQueryCheckUser);
+// 		$CheckUserCount = mysqli_num_rows($result);
+// 		if($CheckUserCount > 0)
+// 		{
+// 			$ErrorMessage = "User Match";
+// 		}
+// 		else
+// 		{
+// 			$pass_encypt = md5($var_Pass1);
+			
+// 			$sqlQueryInsert = "insert into tbl_users (first_name,last_name,email,pass) values ('$var_FirstName','$var_LastName','$var_Email','$pass_encypt')";
+// 			$resultInsert = mysqli_query($conn,$sqlQueryInsert);
+// 			if($resultInsert)
+// 			{
+// 				$ErrorMessage = "Saved";
+// 			}
+// 			else
+// 			{
+// 				$ErrorMessage = "Error";
+// 			}
+// 		}
+		
+// 	}
+	
+	
+// }
+?>
+<?php
+if(isset($_POST["send"])){
+// the message
+$msg = "First line of text\nSecond line of text";
+$name=$_POST['name="age"'];
+
+// use wordwrap() if lines are longer than 70 characters
+$msg = wordwrap($msg,70);
+// send email
+mail("saqib5oct1998@gmail.com","minhaj",$msg,$name);
+?>
+}
+else{
+  
+
+} -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Sir Kashif's Academy</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+  
+  <?php
+	include('nav.php'); 
+?>
+  
+  <div class="container">
+       <div class="row">
+       		<div class="col-md-12" style="width:50%;">
+            	
+                
+                <?php
+					if(isset($ErrorMessage) && $ErrorMessage == "Password Not Match")
+					{
+				?>	
+                 <div class="alert alert-danger">
+  					<strong>Error!</strong> Password does not matched.
+				</div>
+                <?php	
+					}
+				?>
+                
+                <?php
+					if(isset($ErrorMessage) && $ErrorMessage == "User Match")
+					{
+				?>	
+                 <div class="alert alert-danger">
+  					<strong>Error!</strong> <?php echo $var_Email ?> User already registered
+				</div>
+                <?php	
+					}
+				?>
+                
+                
+                 <?php
+					if(isset($ErrorMessage) && $ErrorMessage == "Saved")
+					{
+				?>	
+                 <div class="alert alert-success">
+  					<strong>Succsess!</strong> Your Account Successfully Registered.
+				</div>
+                <?php	
+					}
+				?>
+                
+                
+                 <?php
+					if(isset($ErrorMessage) && $ErrorMessage == "Error")
+					{
+				?>	
+                 <div class="alert alert-danger">
+  					<strong>Error!</strong> Please Try again.
+				</div>
+                <?php	
+					}
+				?>
+                
+                
+                
+	  <div class="bg-top navbar-light">
+    	<div class="container">
+    		<div class="row no-gutters d-flex align-items-center align-items-stretch">
+    			<div class="col-md-4 d-flex align-items-center py-4">
+    				<a class="navbar-brand" href="Registration.html"><img src="images/logosk.JPG" width="150spx"; height="150px"></a>
+    			</div>
+	    		<div class="col-lg-8 d-block">
+		    		<div class="row d-flex">
+					    <div class="col-md d-flex topper align-items-center align-items-stretch py-md-4">
+					    	<div class="icon d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
+					    	<div class="text">
+					    		<span>Email</span>
+						    	<span>skacademyofficial@gmail.com</span>
+						    </div>
+					    </div>
+					    <div class="col-md d-flex topper align-items-center align-items-stretch py-md-4">
+					    	<div class="icon d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>
+						    <div class="text">
+						    	<span>Call</span>
+						    	<span>Call Us: +92 1235 2355 98</span>
+						    </div>
+					    </div>
+					    <div class="col-md topper d-flex align-items-center justify-content-end">
+					    	<p class="mb-0">
+					    		<a href="#" class="btn py-2 px-3 btn-primary d-flex align-items-center justify-content-center">
+					    			<span>Apply now</span>
+					    		</a>
+					    	</p>
+					    </div>
+				    </div>
+			    </div>
+		    </div>
+		  </div>
+    </div>
+	  <nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container d-flex align-items-center px-4">
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+	      <form action="#" class="searchform order-lg-last">
+          <div class="form-group d-flex">
+            <input type="text" class="form-control pl-3" placeholder="Search">
+            <button type="submit" placeholder="" class="form-control search"><span class="ion-ios-search"></span></button>
+          </div>
+        </form>
+     
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav mr-auto">
+	        	<li class="nav-item"><a href="index.html" class="nav-link pl-0">Home</a></li>
+	        	<li class="nav-item"><a href="about.html" class="nav-link">Facilities</a></li>
+	        	<li class="nav-item active"><a href="courses.html" class="nav-link">Courses</a></li>
+	        	<li class="nav-item"><a href="teacher.html" class="nav-link">Staff</a></li>
+	        	<li class="nav-item"><a href="blog.html" class="nav-link">Department</a></li>
+	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+             <!-- <li class="nav-item"><a href="#" class="nav-link">Admission</a></li>-->
+               <li class="nav-item"><a href="Registration.html" class="nav-link">Register</a></li>
+                <!-- <li class="nav-item"><a href="login.php" class="nav-link">Login</a></li>-->
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+    <!-- END nav -->
+    
+    
+  <div class="container body-content">
+        
+        
+
+
+<h2>Sir Kashif's Academy</h2>
+
+<form action="#" class="form-horizontal" method="post" role="form"><input name="RequestVerificationToken" type="hidden" value="oqXdD8rI0yIiPAJAbyhbnS4snouRHKmxLFNXFzXTsBLp7SrlAQa6JzLV6y1dcMf_Wi7UE4xqxrR_EoYEeY1trckRtIBkKD8oGQ1-cPgRtI41" />
+  <h6>Online Classess Registration Form.</h6>
+    <hr />
+<div class="validation-summary-valid text-danger" data-valmsg-summary="true"><ul><li style="display:none"></li>
+</ul></div>    <div class="form-group">
+        <label class="col-md-2 control-label" for="Email">Email Address*</label>
+        <div class="col-md-10">
+            <input class="form-control" data-val="true" data-val-email="The Email field is not a valid e-mail address." data-val-required="The Email field is required." id="Email" name="Email" type="text" value="" required />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 control-label" for="Full name">Full name*</label>
+        <div class="col-md-10">
+            <input class="form-control" data-val="true" data-val-length="The Password must be at least 6 characters long." data-val-length-max="100" data-val-length-min="6" data-val-required="The Password field is required." id="full name" name="full name" type="full name" required/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 control-label" for="Your Age">Your Age*</label>
+        <div class="col-md-10">
+            <input class="form-control" data-val="true" data-val-equalto="The password and confirmation password do not match." data-val-equalto-other="age" id="Your Age" name="age" type="age" required/>
+        </div>
+        
+        <div class="form-group">
+        <label class="col-md-2 control-label" for="Enter your N.I.C No.">Enter your N.I.C No.*</label>
+        <div class="col-md-10">
+            <input class="form-control" data-val="true" data-val-equalto="The password and confirmation password do not match." data-val-equalto-other="Enter your N.I.C No." id="Enter your N.I.C No." name="Enter your N.I.C No." type="Enter your N.I.C No." required/>
+        </div>
+        <div class="form-group">
+        <label class="col-md-2 control-label" for="Enter your Father Name ">Enter Your Father Name*</label>
+        <div class="col-md-10">
+            <input class="form-control" data-val="true" data-val-equalto="The password and confirmation password do not match." data-val-equalto-other="Enter your father name" id="Enter your father name" name="Enter your father name" type="Enter your father name" required/>
+        </div>
+        
+        
+         <div class="form-group">
+        <label class="col-md-2 control-label" for="Enter your Father Name ">Enter Your Father Occupation*</label>
+        <div class="col-md-10">
+            <input class="form-control" data-val="true" data-val-equalto="The password and confirmation password do not match." data-val-equalto-other="Enter your father name" id="Enter your father name" name="Enter your father name" type="Enter your father name" required/>
+        </div>
+        
+  
+        <label class="col-md-2 control-label" for="Enter your Father Name ">Registration for class*</label><br>
+<input type="radio" id="male" name="gender" value="male" required>
+  <label for="male">Class 9th</label><br>
+  <input type="radio" id="female" name="gender" value="female" required>
+  <label for="female">Class 10th</label><br>
+  <input type="radio" id="male" name="gender" value="male" required>
+  <label for="female">Class 11th</label><br>
+  <input type="radio" id="male" name="gender" value="male" required>
+  <label for="female">Class 12th</label><br>
+  <input type="radio" id="male" name="gender" value="male" required>
+  <label for="female">B.com 1</label><br>
+  <input type="radio" id="male" name="gender" value="male" required>
+  <label for="female">B.com 2</label><br>
+  <input type="radio" id="male" name="gender" value="male" required>
+  <label for="female">E-Cat/M-Cat/ B-Cat</label><br>
+  <input type="radio" id="other" name="gender" value="other" required>
+  <label for="other">Other :</label>
+  <div class="col-md-10">
+            <input class="form-control" data-val="true" data-val-equalto="The password and confirmation password do not match." data-val-equalto-other="Enter your father name" id="Enter your father name" name="Enter your father name" type="Enter your father name" required/>
+
+          </div>
+        <div class="form-group">
+        <label class="col-md-2 control-label" for="Groups">Groups*</label><br>
+        <input type="radio" id="male" name="gender" value="male" required>
+  <label for="male">Science</label><br>
+  <input type="radio" id="female" name="gender" value="female" required>
+  <label for="female">Commerce</label><br>
+
+        <?php /*?><div class="col-md-10">
+            <input class="form-control" data-val="true" data-val-equalto="The password and confirmation password do not match." data-val-equalto-other="groups" id="groups" name="groups" type="groups" />
+        <?php */?></div>
+
+  <div class="form-group">
+        <label class="col-md-2 control-label" for="Subjects ">Subjects*</label><br>
+        <label>Mention Your Subjects Name like 1)Chemistry 2)Physics etc</label>
+        <div class="col-md-10">
+            <input class="form-control" data-val="true" data-val-equalto="The password and confirmation password do not match." data-val-equalto-other="Enter your father name" id="Enter your father name" name="Enter your father name" type="Enter your father name" required/>
+        </div>
+
+                <div class="form-group">
+        <label class="col-md-2 control-label" for="Previous Qualification and Result">Previous Qualification and Result*</label><br>
+                <label>i.e Class 9th ( A Grade)
+</label>
+        <div class="col-md-10">
+            <input class="form-control" data-val="true" data-val-equalto="The password and confirmation password do not match." data-val-equalto-other="Previous Qualification and Result" id="Previous Qualification and Result
+" name="Previous Qualification and Result *
+" type="Previous Qualification and Result *
+"  required/>
+        </div>
+        
+    <div class="form-group">
+        <label class="col-md-2 control-label" for="Phone Number">Phone Number*</label>
+        <div class="col-md-10">
+            <input class="form-control" data-val="true" data-val-length="The Password must be at least 6 characters long." data-val-length-max="100" data-val-length-min="6" data-val-required="The Password field is required." id="Phone Number" name="Phone Number" type="Phone Number" required/>
+        </div>
+
+
+        <div class="form-group">
+        <label class="col-md-2 control-label" for="Your Address">Your Address*</label>
+        <div class="col-md-10">
+            <input class="form-control" data-val="true" data-val-length="The Password must be at least 6 characters long." data-val-length-max="100" data-val-length-min="6" data-val-required="The Password field is required." id="Your Address" name="Your Address" type="Your Address" required/>
+        </div>
+
+
+
+        <div class="form-group">
+        <label class="col-md-2 control-label" for="Enter Your Fee">Enter Your Fee*</label><br>
+        <label>Kindly write in Numbers i.e. 2000 etc
+</label>
+        <div class="col-md-10">
+            <input class="form-control" data-val="true" data-val-length="The Password must be at least 6 characters long." data-val-length-max="100" data-val-length-min="6" data-val-required="The Password field is required." id="Enter Your Fee" name="Enter Your Fee" type="Enter Your Fee" required/>
+        </div>
+
+        <div class="form-group">
+        <label class="col-md-2 control-label" for="Fees Paid and date">Fees Paid and date*</label>
+        <p>Kindly Enter i.e Paid (DD-MM-YY) or Not Paid</p>
+        <div class="col-md-10">
+            <input class="form-control" data-val="true" data-val-length="The Password must be at least 6 characters long." data-val-length-max="100" data-val-length-min="6" data-val-required="The Password field is required." id="Fees Paid and date" name="Fees Paid and date" type="Fees Paid and date" required/>
+        </div>
+
+    </div>
+    
+    </div>
+
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-default" value="Register" name="send" required/>
+        </div>
+    </div>
+</form>
+
+<?php
+if(isset($_POST['btn_submit']))
+{
+      $var_FirstName = $_POST["txtFN"];
+      $var_LastName = $_POST["txtLastName"];
+      $var_Email = $_POST["txtEmail"];
+      $var_Pass1 = $_POST["txtPass1"];
+      $var_Pass2 = $_POST["txtPass2"];
+      $to = "sirkashifsacademyofficial@gmail.com";
+
+
+    $check = mail(to, subject, message,"from: $from\n");
+    if($check == true)
+    {
+      echo "Successfully sent!";
+    }
+    else 
+    {
+      echo "not send.";
+    }
+    
+
+}
+
+
+
+?>
+
+
+
+</div>
+</div>
+</div>
+    	
+    <footer class="ftco-footer ftco-bg-dark ftco-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md-6 col-lg-3">
+            <div class="ftco-footer-widget mb-5">
+            	<h2 class="ftco-heading-2">Have a Questions?</h2>
+            	<div class="block-23 mb-3">
+	              <ul>
+	                <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
+	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+92 392 3929 210</span></a></li>
+	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">skacademyofficial@gmail.com</span></a></li>
+	              </ul>
+	            </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="ftco-footer-widget mb-5">
+              <h2 class="ftco-heading-2">Recent Blog</h2>
+              <div class="block-21 mb-4 d-flex">
+                <a class="blog-img mr-4" style="background-image: url(images/21.jpg);"></a>
+                <div class="text">
+                  <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about</a></h3>
+                  <div class="meta">
+                    <div><a href="#"><span class="icon-calendar"></span> June 27, 2019</a></div>
+                    <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+                  </div>
+                </div>
+              </div>
+              <div class="block-21 mb-5 d-flex">
+                <a class="blog-img mr-4" style="background-image: url(images/13s.jpg);"></a>
+                <div class="text">
+                  <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about</a></h3>
+                  <div class="meta">
+                    <div><a href="#"><span class="icon-calendar"></span> June 27, 2019</a></div>
+                    <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="ftco-footer-widget mb-5 ml-md-4">
+              <h2 class="ftco-heading-2">Links</h2>
+              <ul class="list-unstyled">
+                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Home</a></li>
+                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Facilities</a></li>
+                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Courses</a></li>
+                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Staff</a></li>
+                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Department</a></li>
+                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Contact</a></li>
+                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Admission</a></li>
+                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Register</a></li>
+                <!--<li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Login</a></li>-->
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="ftco-footer-widget mb-5">
+            	<h2 class="ftco-heading-2">Subscribe Us!</h2>
+              <form action="#" class="subscribe-form">
+                <div class="form-group">
+                  <input type="text" class="form-control mb-2 text-center" placeholder="Enter email address" required>
+                  <input type="submit" value="Subscribe" class="form-control submit px-3">
+                </div>
+              </form>
+            </div>
+            <div class="ftco-footer-widget mb-5">
+            	<h2 class="ftco-heading-2 mb-0">Connect With Us</h2>
+            	<ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
+                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+       
+        </div>
+      </div>
+    </footer>
+    
+  
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/jquery.animateNumber.min.js"></script>
+  <script src="js/scrollax.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="js/google-map.js"></script>
+  <script src="js/main.js"></script>
+    
+  </body>
+</html
